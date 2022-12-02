@@ -1,0 +1,142 @@
+Assignment #1
+
+Write program with a main function that calls all the following functions defined below. In the main, allow the user to enter in the parameters needed for each function. In turn have the main receive the return value(s) from each function and print it out.
+
+Raising a number n to a power p is the same as multiplying n by itself p times. Write a function called power() that takes a double value for n and an int value for p, and returns the result as a double value. Use a default argument of 2 for p, so that if this argument is omitted, the number n will be squared. 
+Write a function called hms_to_secs() that takes three int values—for hours, minutes, and seconds—as arguments, and returns the equivalent time in seconds (type long). In the main function, write logic to call this function repeatedly obtaining a time value in hours, minutes, and seconds from the user (format 12:59:59), calling the function, and displaying the value of seconds it returns. The loop ends when the user enters a negative time for hour.
+Write a function called swap() that interchanges two int values passed to it by the calling program. (Note that this function swaps the values of the variables in the calling program, not those in the function.) You’ll need to decide how to pass the arguments. 
+
+Write a completely separate program that reads students’ names followed by their test scores from a data file. The program should read in the data till end of file is found (or the maximum students is reached) and then process the data as described here. The program should output each student’s name followed by the test scores and the relevant grade. It should also find and print the highest test score and the name of the students having the highest test score.
+
+Student data should be stored in an array of structures. The structure should contain the following members; studentFName and studentLName of type string, testScore of type int, and grade of type char. Suppose that the class has 20 students. The array should be 20 elements long. Try to use exception handling in the event invalid data is found while reading the data file.
+Your program must contain at least the following functions:
+A function to read the students’ data into the structure array from a data file
+A function to assign the relevant grade to each student.
+A function to find the highest test score.
+A function to print the names of the students having the highest test score.
+Your program must output each student’s name in this form: last name followed by a comma, followed by a space, followed by the first name; the name must be left justified. Moreover, other than declaring the variables and opening the input and output files, the function main should only be a collection of function calls.
+You create your test data text file but it should be no more than 20 rows of data which have 2 names and a test score.  It may look something like this:
+Thomas		Baker		87
+Bob		Jones		99
+Suzy		Smith		76
+… and so on …
+Assignment #2
+
+Starting from the idea in Assignment #1 using Fractions. Make a Fraction class with two members (numerator and denominator). Create the following member functions:
+
+Empty constructor which initializes the Fraction zero, 
+A one parameter constructor with just a numerator. This would make the Fraction represent a whole number.
+A constructor with a double. This would make a Fraction using that double by multiplying it by 100000, then creating a numerator and denominator as the result. For example; PI, 3.14159, would be saved in a Fraction object as 314159/100000
+A constructor with both numerator and denominator. This would make a Fraction with both a numerator and denominator
+
+Add function taking a Fraction as a parameter and returning a Fraction
+Subtract function taking a Fraction as a parameter and returning a Fraction
+Multiply function taking a Fraction as a parameter and returning a Fraction
+Divide function taking a Fraction as a parameter and returning a Fraction
+
+Add function taking two Fractions as parameters and updating the current object
+Subtract function taking a Fraction as a parameter and updating the current object
+Multiply function taking a Fraction as a parameter and updating the current object
+Divide function taking a Fraction as a parameter and updating the current object
+
+
+Make sure to use exception handling in the event there is ever a divide by zero or any other error condition which would cause the program to terminate unexpectedly.
+
+In the main program, create a looping menu driven interface which allows the user to enter in two Fractions in the form of (1/3) and a mathematical operation. The program then creates the two fractions using the new/delete memory management functionality, calls the appropriate math function, then deletes the Fractions appropriately. The loop ends when the user enters Q or q to quit for the math operation.
+
+
+
+Assignment #3
+
+Expand on Assignment #2 using Fractions and write functions for all the math operators available and properly overloading them. Write operator overloaded functions for the following operators:
+
+	These binary functions return Fraction objects:
++=  -=  *=   /=     +   -   /   *   
+
+	These unary functions return Fraction objects:
+-   ^    ++ -- (both prefix & postfix)
+
+Theses return boolean True / False:		These casting functions:
+<  >  <=   >=  ==   !=   !			   ( double )   ( float )
+
+	Examples:	Fraction a, b, c ;
+		a = b + c ;	a = b - c ;	a += b ;	a -= b ;
+a = b * c ; 	a = b / c ;	a *= b ;	a /= b ;
+
+		if ( a == b ) 		if ( a != b )		int x = !a ;   // 0 or 1
+		if ( a < b ) 		if ( a > b )		float f = (float) a ;
+		if ( a <= b ) 		if ( a <= b )		double d = (double) a ;
+
+	In the ++ and --, these function increment or decrement by 1/1.
+So if a is 6/5, then at the end of each line a and b are:
+
+	a = ++b ;		//  a is 11/5   b is 11/5
+	a = b++ ;		//  a is 6/5   b is 11/5
+	a = --b ;		//  a is 1/5   b is 1/5
+	a = b-- ;		//  a is 7/5   b is 1/5
+
+	When a = 2/5, for   -    b = -a 		//  a is 2/5 and b is –2/5
+	When a = 2/5, for   ^    b = ^a		//  a is 2/5 and b is 5/2
+
+Create a private reduce() function within the class which reduces the Fraction to lowest terms.  For example, Fractions like these would become these…
+	2/4	->	1/2
+	5/8	->	5/8
+	76/32	->	19/8
+	17/17	->	1/1
+	24/12	->	2/1
+	45/65	->	9/13	
+
+Once again, make sure to use exception handling in the event there is ever a divide by zero or any other error condition which would cause the program to terminate unexpectedly.
+
+Finally, expand the main program, so it allows the user to call any of the operator functions you’ve created. As before, the program ends when the user enters Q or q to quit for the math operation.
+
+Assignment #4
+
+A point in the x-y plane is represented by its x-coordinate and y-coordinate. Design a class, pointType, that can store and process a point in the x-y plane. You should then perform operations on the point, such as setting the coordinates of the point, printing the coordinates of the point, returning the x-coordinate, and returning the y-coordinate. 
+
+Every circle has a center and a radius. Given the radius, we can determine the circle’s area and circumference. Given the center, we can determine its position in the x-y plane. The center of the circle is a point in the x-y plane. Design a class, circleType, that can store the radius and center of the circle. Because the center is a point in the x-y plane and you designed the class to capture the properties of a point, in addition to the radius member, create a member of type class pointType. You should be able to perform the usual operations on the circle, such as setting the radius, printing the radius, calculating and printing the area and circumference, and carrying out the usual operations on the center. 
+
+Every cylinder has a base and height, wherein the base is a circle. Design a class, cylinderType, that can capture the properties of a cylinder and perform the usual operations on the cylinder. Derive this class from the class circleType. Some of the operations that can be performed on a cylinder are as follows: calculate and print the volume, calculate and print the surface area, set the height, set the radius of the base, and set the center of the base. 
+
+Write a main program which demonstrates all functionality in every class. Make sure to create putData() and getData() function to the user can enter in and print out information about each object.
+
+Each class should have its own source file and header file; main.cpp, pointType.cpp, pointType.h, circleType.cpp, circleType.h, etc. Build all these source files and headers in a single Visual Studio project to make an executable
+
+
+Assignment #5
+
+Design a class named Person. It has two derived classes named Student and Employee. Make Faculty and Staff derived classes of Employee. Define a class named MyDate that contains the fields year, month, and day. A person has a name (string), birth date (MyDate), phone number (string), and e-mail address (string). A student has a class status (freshman, sophomore, junior, or senior) this should be an enumerated type. An employee has an office room # (int), salary (long), and date hired (MyDate). A faculty member has office hours (unknown length list of myDate objects) and has tenure (bool). A staff member has a title (string). 
+
+Each of these classes should have a getdata() function to get its data from the user at the keyboard, and a putdata() function to display its data.
+
+Write a menu driven main program which allows the user to enter in information for a Student, Faculty and Staff.  Objects of type Person and Employee are not allowed therefore they must be pure virtual classes.
+
+Finally, to demonstrate your knowledge of dynamic binding versus static binding, create an array of pointers to Person which will allow you to dynamically create derived objects and store them in the array. Then loop thru the array and print out the information for each object by using the putData.
+
+Each class should have its own source file and header file; main.cpp, person.cpp, person.h, faculty.cpp, faculty.h, etc. Build all these source files and headers in a single Visual Studio project to make an executable
+
+Assignment #6
+
+Recall that in C++, there is no check on an array index out of bounds. However, during program execution, an array index out of bounds can cause serious problems. Also, in C++, the array index starts at 0. 
+Design and implement the class myArray that solves the array index out of bounds problem and also allows the user to begin the array index starting at any integer, positive or negative. Every object of type myArray is an array of type int. During execution, when accessing an array component, if the index is out of bounds, the program must terminate with an appropriate error message. 
+
+Consider the following statements:
+myArray<int> list(5); 		//Line 1
+myArray<int> myList(2, 13); 	//Line 2
+myArray<int> yourList(-5, 9); 	//Line 3
+
+The statement in Line 1 declares list to be an array of 5 components, the component type is int, and the components are: list[0], list[1], ..., list[4]; 
+
+The statement in Line 2 declares myList to be an array of 11 components, the component type is int, and the components are: myList[2], myList[3], ..., myList[12]; 
+
+The statement in Line 3 declares yourList to be an array of 14 components, the component type is int, and the components are: yourList[-5], yourList[-4], ..., yourList[0], ..., yourList[8]. 
+Write a program to test the class myArray.
+
+
+
+Assignment #7
+
+Building on the Fraction class you did earlier in the semester, Make the Fraction class into a template so it can be instantiated using different data types for the numerator and denominator. These must be integer types, which pretty much restricts you to char, short, int, and long (unless you develop an integer type of 
+our own).
+
+In main(), instantiate a class Fraction<char> and use it for the four-function calculator. Class Fraction<char> will take less memory than Fraction<int>, but won’t be able to handle large fractions.
